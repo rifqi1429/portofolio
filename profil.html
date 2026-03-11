@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -8,9 +8,43 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-
-    <!-- External Styles -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Custom Animations */
+        @keyframes slideInLeft {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideInRight {
+            from { transform: translateX(50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes fadeInScale {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        @keyframes floatUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+        .animate-slide-in-left { animation: slideInLeft 0.8s ease-out forwards; }
+        .animate-slide-in-right { animation: slideInRight 0.8s ease-out forwards; }
+        .animate-fade-in-scale { animation: fadeInScale 0.6s ease-out forwards; }
+        .animate-float-up { animation: floatUp 0.6s ease-out forwards; }
+        .typewriter {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid #8B5CF6;
+            animation: typewriter 2s steps(20) forwards, blink 0.75s step-end infinite;
+        }
+    </style>
 </head>
 
 <body class="animated-bg text-gray-200 font-sans min-h-screen relative overflow-x-hidden">
@@ -22,7 +56,7 @@
                 <i class="fas fa-code text-6xl text-purple-500 pulse-logo"></i>
             </div>
             <h1 class="text-3xl font-bold tracking-wider uppercase mb-2">
-                STUDENT<span class="text-purple-500">.DEV</span>
+                <span class="text-purple-500">R</span>
             </h1>
             <div class="loading-bar-container w-64 h-1 bg-gray-800 rounded-full overflow-hidden mt-6">
                 <div id="loading-bar" class="loading-bar h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
@@ -41,61 +75,49 @@
     <nav id="navbar" class="fixed w-full z-50 bg-transparent transition-all duration-500">
         <div class="p-4 flex justify-between items-center max-w-6xl mx-auto">
             <h1 class="text-xl font-bold tracking-tighter uppercase transition-all hover:scale-110 cursor-pointer">
-                STUDENT<span class="text-purple-500">.DEV</span>
+            MRS<span class="text-purple-500">.DEV</span>
             </h1>
-            <div class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="#home"
-                    class="hover:text-purple-400 transition transform hover:scale-110 inline-block">Beranda</a>
-                <a href="#tentang"
-                    class="hover:text-purple-400 transition transform hover:scale-110 inline-block">Tentang</a>
-                <a href="#tech"
-                    class="hover:text-purple-400 transition transform hover:scale-110 inline-block">Skills</a>
-                <a href="#projek"
-                    class="hover:text-purple-400 transition transform hover:scale-110 inline-block">Projek</a>
-                <a href="#kontak"
-                    class="hover:text-purple-400 transition transform hover:scale-110 inline-block">Kontak</a>
+            <div class="hidden md:flex space-x-12 text-sm font-medium">
+                <a href="#home" class="hover:text-purple-400 transition transform hover:scale-110 inline-block">Home</a>
+                <a href="#tentang" class="hover:text-purple-400 transition transform hover:scale-110 inline-block">About</a>
+                <a href="#tech" class="hover:text-purple-400 transition transform hover:scale-110 inline-block">Skills</a>
+                <a href="#projek" class="hover:text-purple-400 transition transform hover:scale-110 inline-block">Projects</a>
+                <a href="#kontak" class="hover:text-purple-400 transition transform hover:scale-110 inline-block">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Animations -->
     <section id="home" class="pt-32 pb-16 px-6 max-w-6xl mx-auto relative z-10 min-h-screen flex items-center">
         <div class="flex flex-col md:flex-row items-center justify-between gap-20 lg:gap-32">
             <div class="text-center md:text-left flex-1 order-2 md:order-1">
-                <span class="text-purple-500 font-mono text-xs md:text-sm tracking-widest uppercase mb-2 block reveal">
-                    <span class="inline-block wave mr-2">👋</span> Cerdas & Kreatif
+                <span class="text-purple-500 font-mono text-xs md:text-sm tracking-widest uppercase mb-2 block reveal animate-float-up">
+                    <span class="inline-block wave mr-2 animate-bounce">👋</span> <span class="typewriter">Smart & Creative</span>
                 </span>
                 <h2 class="text-5xl md:text-6xl font-extrabold mb-3 leading-tight">
-                    <span class="reveal reveal-delay-1 text-fade-in-up">Halo, Saya <br></span>
-                    <span class="gradient-text reveal reveal-delay-2">Muhamad Rifqi s</span>
+                    <span class="reveal reveal-delay-1 text-fade-in-up inline-block animate-slide-in-left">
+                        Hello, I'm <br>
+                    </span>
+                    <span class="gradient-text reveal reveal-delay-2 animate-fade-in-scale" style="animation-delay: 0.3s;">Muhamad Rifqi S</span>
                 </h2>
-                <p
-                    class="text-gray-400 text-lg md:text-xl max-w-lg mb-6 leading-relaxed reveal reveal-delay-3 typing-text">
-                    Saya adalah seorang siswa kelas 11
+                <p class="text-gray-400 text-lg md:text-xl max-w-lg mb-6 leading-relaxed reveal reveal-delay-3 animate-float-up" style="animation-delay: 0.5s;">
+                    I'm a grade 11 student
                 </p>
-                <div class="flex flex-wrap justify-center md:justify-start gap-3 reveal reveal-delay-4">
-                    <a href="mailto:muhamadrifqis234@gmail.com"
-                        class="btn-primary bg-purple-600 px-6 py-3 rounded-xl font-bold hover:bg-purple-700 transition shadow-lg shadow-purple-600/20 glow text-sm">
+                <div class="flex flex-wrap justify-center md:justify-start gap-3 reveal reveal-delay-4 animate-float-up" style="animation-delay: 0.7s;">
+                    <a href="mailto:muhamadrifqis234@gmail.com" class="btn-primary bg-purple-600 px-6 py-3 rounded-xl font-bold hover:bg-purple-700 transition shadow-lg shadow-purple-600/20 glow text-sm">
                         Contact me <span class="ml-1"></span>
                     </a>
                     <div class="flex items-center gap-4 text-xl px-3">
-                        <a href="https://github.com/rifqi1429"
-                            class="social-icon hover:text-purple-500 transition text-purple-400/70"><i
-                                class="fab fa-github"></i></a>
-                        <a href="https://www.instagram.com/knyz.24"
-                            class="social-icon hover:text-purple-500 transition text-purple-400/70"><i
-                                class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/rifqi1429" class="social-icon hover:text-purple-500 transition text-purple-400/70"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/knyz.24" class="social-icon hover:text-purple-500 transition text-purple-400/70"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
 
             <div class="flex-1 flex justify-center md:justify-end order-1 md:order-2">
-                <div class="relative">
-                    <img src="asset/foto.jpg"
-                        alt="Foto Profil"
-                        class="w-64 h-64 md:w-96 md:h-96 rounded-2xl profile-border object-cover shadow-xl shadow-purple-500/10 reveal reveal-delay-2">
-                    <div
-                        class="absolute -bottom-4 -right-4 bg-gray-900/80 border border-purple-500/50 p-3 rounded-2xl shadow-xl backdrop-blur-xl reveal reveal-delay-5">
+                <div class="relative animate-fade-in-scale">
+                    <img src="asset/foto.jpg" alt="Profile Photo" class="w-64 h-64 md:w-96 md:h-96 rounded-2xl profile-border object-cover shadow-xl shadow-purple-500/10 reveal reveal-delay-2 glow-pulse">
+                    <div class="absolute -bottom-4 -right-4 bg-gray-900/80 border border-purple-500/50 p-3 rounded-2xl shadow-xl backdrop-blur-xl reveal reveal-delay-5 float-continuous">
                         <div class="flex items-center gap-2">
                             <div class="relative">
                                 <div class="w-2 h-2 bg-green-500 rounded-full"></div>
@@ -104,69 +126,80 @@
                             <span class="font-bold text-xs uppercase tracking-wider">Open</span>
                         </div>
                     </div>
-                    <!-- Floating badges -->
-                    <div
-                        class="absolute -top-3 -left-3 bg-gray-900 p-2 rounded-xl shadow-lg border border-gray-700 reveal reveal-delay-3 spin-slow">
-                        <i class="fas fa-code text-purple-500 text-lg"></i>
+                    <div class="absolute -top-3 -left-3 bg-gray-900 p-2 rounded-xl shadow-lg border border-gray-700 reveal reveal-delay-3 spin-slow float-rotate">
+                        <i class="fas fa-code text-purple-500 text-lg icon-pulse"></i>
                     </div>
-                    <div
-                        class="absolute top-1/3 -right-5 bg-gray-900 p-2 rounded-xl shadow-lg border border-gray-700 reveal reveal-delay-4 heartbeat">
+                    <div class="absolute top-1/3 -right-5 bg-gray-900 p-2 rounded-xl shadow-lg border border-gray-700 reveal reveal-delay-4 heartbeat float-continuous">
                         <i class="fas fa-rocket text-purple-500 text-lg"></i>
+                    </div>
+                    <div class="absolute -bottom-2 -left-3 bg-gray-900 p-2 rounded-xl shadow-lg border border-gray-700 reveal reveal-delay-4 float-continuous-delayed spin-slow">
+                        <i class="fas fa-lightbulb text-yellow-500 text-lg"></i>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section with Animations & Vision/Mission -->
     <section id="tentang" class="py-16 bg-gray-900/20 relative z-10 min-h-screen flex items-center">
         <div class="max-w-6xl mx-auto px-6 w-full">
             <div class="bg-gray-900/50 border border-gray-800 rounded-2xl p-6 md:p-10 reveal">
                 <div class="grid md:grid-cols-2 gap-8">
                     <div>
-                        <h3 class="section-title text-3xl font-bold mb-4 flex items-center gap-3 reveal">
-                            <span class="w-8 h-1 bg-purple-500 inline-block"></span> Tentang Saya
+                        <h3 class="section-title text-3xl font-bold mb-4 flex items-center gap-3 reveal animate-slide-in-left">
+                            <span class="w-8 h-1 bg-purple-500 inline-block"></span> About Me
                         </h3>
-                        <p class="text-gray-400 text-lg leading-relaxed mb-4 reveal reveal-delay-1">
-                            Halo! Saya adalah siswa di <span class="text-white font-semibold text-purple-400">SMK Bina
-                                Kerja</span>. Sejak mengenal dunia IT, saya jatuh cinta dengan cara teknologi dapat
-                            mempermudah hidup orang banyak.
+                        <p class="text-gray-400 text-lg leading-relaxed mb-4 reveal reveal-delay-1 animate-float-up" style="animation-delay: 0.2s;">
+                            Hello! I'm a student at <span class="text-white font-semibold text-purple-400">SMK Bina Kerja</span>. Since discovering the world of IT, I've fallen in love with how technology can make people's lives easier.
                         </p>
-                        <p class="text-gray-400 text-base leading-relaxed reveal reveal-delay-2">
-                            Saya bukan sekadar "penulis kode", tapi juga seorang pemecah masalah. Saya menghabiskan
-                            waktu luang untuk mempelajari tren desain terbaru dan mencoba teknologi baru.
+                        <p class="text-gray-400 text-base leading-relaxed reveal reveal-delay-2 animate-float-up" style="animation-delay: 0.4s;">
+                            I'm not just a "code writer", but also a problem solver. I spend my free time learning the latest design trends and trying out new technologies.
                         </p>
+                        
+                        <!-- Vision & Mission -->
+                        <div class="mt-6 space-y-4">
+                            <div class="p-4 bg-purple-900/20 border border-purple-500/30 rounded-xl reveal animate-slide-in-left" style="animation-delay: 0.5s;">
+                                <h4 class="font-bold text-purple-400 mb-2"><i class="fas fa-eye mr-2"></i>Vision</h4>
+                                <p class="text-gray-400 text-sm">To become a skilled developer who creates innovative technology solutions that positively impact society.</p>
+                            </div>
+                            <div class="p-4 bg-pink-900/20 border border-pink-500/30 rounded-xl reveal animate-slide-in-right" style="animation-delay: 0.6s;">
+                                <h4 class="font-bold text-pink-400 mb-2"><i class="fas fa-bullseye mr-2"></i>Mission</h4>
+                                <p class="text-gray-400 text-sm">Continuously learn and apply new technologies, create useful applications, and collaborate with others to build amazing projects.</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="grid grid-cols-2 gap-4">
-                        <div
-                            class="about-card p-4 bg-gray-800/30 rounded-xl border border-gray-700/50 reveal reveal-delay-2">
+                        <div class="about-card p-4 bg-gray-800/30 rounded-xl border border-gray-700/50 reveal reveal-delay-2 animate-float-up" style="animation-delay: 0.3s;">
                             <div class="relative">
                                 <i class="fas fa-map-marker-alt text-purple-500 text-xl mb-3"></i>
-                                <span
-                                    class="absolute -top-1 -right-1 w-2 h-2 bg-purple-500 rounded-full heartbeat"></span>
+                                <span class="absolute -top-1 -right-1 w-2 h-2 bg-purple-500 rounded-full heartbeat"></span>
                             </div>
-                            <h4 class="font-bold mb-1 text-white italic text-sm">Alamat</h4>
-                            <p class="text-xs text-gray-500">purwakarta, Indonesia</p>
+                            <h4 class="font-bold mb-1 text-white italic text-sm">Location</h4>
+                            <p class="text-xs text-gray-500">Purwakarta, Indonesia</p>
                         </div>
-                        <div
-                            class="about-card p-4 bg-gray-800/30 rounded-xl border border-gray-700/50 reveal reveal-delay-2">
+                        <div class="about-card p-4 bg-gray-800/30 rounded-xl border border-gray-700/50 reveal reveal-delay-2 animate-float-up" style="animation-delay: 0.4s;">
                             <div class="relative">
                                 <i class="fas fa-code text-purple-500 text-xl mb-3"></i>
-                                <span
-                                    class="absolute -top-1 -right-1 w-2 h-2 bg-purple-500 rounded-full heartbeat"></span>
+                                <span class="absolute -top-1 -right-1 w-2 h-2 bg-purple-500 rounded-full heartbeat"></span>
                             </div>
-                            <h4 class="font-bold mb-1 text-white italic text-sm">Fokus Utama</h4>
+                            <h4 class="font-bold mb-1 text-white italic text-sm">Main Focus</h4>
                             <p class="text-xs text-gray-500">Web Dev & UI/UX</p>
                         </div>
-                        <div
-                            class="about-card p-4 bg-gray-800/30 rounded-xl border border-gray-700/50 reveal reveal-delay-3">
+                        <div class="about-card p-4 bg-gray-800/30 rounded-xl border border-gray-700/50 reveal reveal-delay-3 animate-float-up" style="animation-delay: 0.5s;">
                             <div class="relative">
                                 <i class="fas fa-lightbulb text-yellow-500 text-xl mb-3"></i>
-                                <span
-                                    class="absolute -top-1 -right-1 w-2 h-2 bg-yellow-500 rounded-full heartbeat"></span>
+                                <span class="absolute -top-1 -right-1 w-2 h-2 bg-yellow-500 rounded-full heartbeat"></span>
                             </div>
-                            <h4 class="font-bold mb-1 text-white italic text-sm">Hobi</h4>
-                            <p class="text-xs text-gray-500">Eksperimen & Desain</p>
+                            <h4 class="font-bold mb-1 text-white italic text-sm">Hobby</h4>
+                            <p class="text-xs text-gray-500">Experiments & Design</p>
+                        </div>
+                        <div class="about-card p-4 bg-gray-800/30 rounded-xl border border-gray-700/50 reveal reveal-delay-3 animate-float-up" style="animation-delay: 0.6s;">
+                            <div class="relative">
+                                <i class="fas fa-graduation-cap text-green-500 text-xl mb-3"></i>
+                                <span class="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full heartbeat"></span>
+                            </div>
+                            <h4 class="font-bold mb-1 text-white italic text-sm">Education</h4>
+                            <p class="text-xs text-gray-500">SMK Bina Kerja</p>
                         </div>
                     </div>
                 </div>
@@ -178,90 +211,64 @@
     <section id="tech" class="py-16 relative z-10 min-h-screen flex items-center">
         <div class="max-w-6xl mx-auto px-6 w-full">
             <div class="text-center mb-10 reveal">
-                <h3 class="section-title text-3xl md:text-4xl font-bold uppercase tracking-widest text-skew">Tech Stack
-                    <span class="text-purple-500 neon-text">& Tools</span>
-                </h3>
-                <p class="text-gray-500 mt-2 italic text-base">Teknologi yang saya gunakan untuk mewujudkan ide.</p>
+                <h3 class="section-title text-3xl md:text-4xl font-bold uppercase tracking-widest text-skew">Tech Stack <span class="text-purple-500 neon-text">& Tools</span></h3>
+                <p class="text-gray-500 mt-2 italic text-base">Technologies I use to bring ideas to life.</p>
             </div>
 
-            <!-- Tech Stack Grid - Rapi & Teratur -->
-            <div
-                class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-4 md:gap-4 justify-items-center">
-                <!-- Frontend -->
-                <div
-                    class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-1 p-4">
+            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-4 md:gap-4 justify-items-center">
+                <div class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-1 p-4">
                     <i class="devicon-html5-plain colored text-3xl md:text-4xl"></i>
                     <span class="text-xs md:text-sm font-bold uppercase tracking-wider mt-2">HTML5</span>
                 </div>
-                <div
-                    class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-1 p-4">
+                <div class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-1 p-4">
                     <i class="devicon-css3-plain colored text-3xl md:text-4xl"></i>
                     <span class="text-xs md:text-sm font-bold uppercase tracking-wider mt-2">CSS3</span>
                 </div>
-                <div
-                    class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-2 p-4">
+                <div class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-2 p-4">
                     <i class="devicon-javascript-plain colored text-3xl md:text-4xl"></i>
                     <span class="text-xs md:text-sm font-bold uppercase tracking-wider mt-2">JS</span>
                 </div>
-                <div
-                    class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-2 p-4">
+                <div class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-2 p-4">
                     <i class="devicon-tailwindcss-original colored text-3xl md:text-4xl"></i>
                     <span class="text-xs md:text-sm font-bold uppercase tracking-wider mt-2">Tailwind</span>
                 </div>
-                <div
-                    class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-3 p-4">
+                <div class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-3 p-4">
                     <i class="devicon-bootstrap-plain colored text-3xl md:text-4xl"></i>
                     <span class="text-xs md:text-sm font-bold uppercase tracking-wider mt-2">Bootstrap</span>
                 </div>
-
-                <!-- Backend -->
-                <div
-                    class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-3 p-4">
+                <div class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-3 p-4">
                     <i class="devicon-php-plain colored text-3xl md:text-4xl"></i>
                     <span class="text-xs md:text-sm font-bold uppercase tracking-wider mt-2">PHP</span>
                 </div>
-                <div
-                    class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-4 p-4">
+                <div class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-4 p-4">
                     <i class="devicon-laravel-original colored text-3xl md:text-4xl"></i>
                     <span class="text-xs md:text-sm font-bold uppercase tracking-wider mt-2">Laravel</span>
                 </div>
-                <div
-                    class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-4 p-4">
+                <div class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-4 p-4">
                     <i class="devicon-python-plain colored text-3xl md:text-4xl"></i>
                     <span class="text-xs md:text-sm font-bold uppercase tracking-wider mt-2">Python</span>
                 </div>
-
-
-                <!-- Database -->
-                <div
-                    class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-5 p-4">
+                <div class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-5 p-4">
                     <i class="devicon-mysql-plain-wordmark colored text-3xl md:text-4xl"></i>
                     <span class="text-xs md:text-sm font-bold uppercase tracking-wider mt-2">MySQL</span>
                 </div>
-
-                <!-- Tools -->
-                <div
-                    class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-1 p-4">
+                <div class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-1 p-4">
                     <i class="devicon-vscode-plain colored text-3xl md:text-4xl"></i>
                     <span class="text-xs md:text-sm font-bold uppercase tracking-wider mt-2">VS Code</span>
                 </div>
-                <div
-                    class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-1 p-4">
+                <div class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-1 p-4">
                     <i class="devicon-git-plain colored text-3xl md:text-4xl"></i>
                     <span class="text-xs md:text-sm font-bold uppercase tracking-wider mt-2">Git</span>
                 </div>
-                <div
-                    class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-2 p-4">
+                <div class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-2 p-4">
                     <i class="devicon-figma-plain colored text-3xl md:text-4xl"></i>
                     <span class="text-xs md:text-sm font-bold uppercase tracking-wider mt-2">Figma</span>
                 </div>
-                <div
-                    class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-2 p-4">
+                <div class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-2 p-4">
                     <i class="devicon-canva-original colored text-3xl md:text-4xl"></i>
                     <span class="text-xs md:text-sm font-bold uppercase tracking-wider mt-2">Canva</span>
                 </div>
-                <div
-                    class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-3 p-4">
+                <div class="tech-card w-full aspect-square bg-gray-900 rounded-xl border border-gray-800 flex flex-col items-center justify-center reveal reveal-delay-3 p-4">
                     <i class="devicon-github-original colored text-3xl md:text-4xl"></i>
                     <span class="text-xs md:text-sm font-bold uppercase tracking-wider mt-2">GitHub</span>
                 </div>
@@ -274,176 +281,128 @@
         <div class="w-full">
             <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-4 reveal">
                 <div>
-                    <h3 class="section-title text-4xl font-extrabold tracking-tight text-rotate-in">KARYA <span
-                            class="text-purple-500 rainbow-text">TERPILIH</span></h3>
-                    <p class="text-gray-500 mt-2 text-lg">Daftar project yang pernah saya kerjakan.</p>
+                    <h3 class="section-title text-4xl font-extrabold tracking-tight text-rotate-in">SELECTED <span class="text-purple-500 rainbow-text">WORKS</span></h3>
+                    <p class="text-gray-500 mt-2 text-lg">List of projects I've worked on.</p>
                 </div>
             </div>
 
-            <!-- Toggle Buttons -->
             <div class="flex justify-center mb-10 reveal">
                 <div class="inline-flex bg-gray-900/50 border border-gray-800 rounded-xl p-1">
-                    <button id="btn-projek"
-                        class="toggle-btn active px-6 py-3 rounded-lg font-bold transition-all duration-300"
-                        onclick="showContent('projek')">
-                        <i class="fas fa-code mr-2"></i>Projek
+                    <button id="btn-projek" class="toggle-btn active px-6 py-3 rounded-lg font-bold transition-all duration-300" onclick="showContent('projek')">
+                        <i class="fas fa-code mr-2"></i>Projects
                     </button>
-                    <button id="btn-desain"
-                        class="toggle-btn px-6 py-3 rounded-lg font-bold transition-all duration-300"
-                        onclick="showContent('desain')">
-                        <i class="fas fa-palette mr-2"></i>Desain
+                    <button id="btn-desain" class="toggle-btn px-6 py-3 rounded-lg font-bold transition-all duration-300" onclick="showContent('desain')">
+                        <i class="fas fa-palette mr-2"></i>Designs
                     </button>
                 </div>
             </div>
 
-            <!-- Projek Content -->
             <div id="content-projek" class="grid md:grid-cols-2 gap-8">
                 <div class="project-card group cursor-pointer reveal reveal-delay-1">
-                    <div
-                        class="relative overflow-hidden rounded-2xl border border-gray-800 bg-gray-900 shadow-xl shadow-purple-500/5">
-                        <div
-                            class="overlay absolute inset-0 bg-purple-600/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 z-10 backdrop-blur-sm">
+                    <div class="relative overflow-hidden rounded-2xl border border-gray-800 bg-gray-900 shadow-xl shadow-purple-500/5">
+                        <div class="overlay absolute inset-0 bg-purple-600/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 z-10 backdrop-blur-sm">
                             <div class="text-center translate-y-4 group-hover:translate-y-0 transition duration-500">
                                 <p class="font-black text-xl mb-3">PREVIEW</p>
                                 <i class="fas fa-external-link-alt text-2xl bounce"></i>
                             </div>
                         </div>
-                        <img src="asset/Screenshot 2026-03-10 215433.png" alt="Project 1"
-                            class="w-full aspect-video object-cover group-hover:scale-110 transition duration-700">
+                        <img src="asset/Screenshot 2026-03-10 215433.png" alt="Project 1" class="w-full aspect-video object-cover group-hover:scale-110 transition duration-700">
                     </div>
-                    <h4
-                        class="mt-5 text-xl font-bold group-hover:text-purple-400 transition transform group-hover:translate-x-2">
-                        Landing Page LMS</h4>
+                    <h4 class="mt-5 text-xl font-bold group-hover:text-purple-400 transition transform group-hover:translate-x-2">Landing Page LMS</h4>
                     <p class="text-gray-500 text-base mt-1">Responsive Landing Page for Learning Management System</p>
                 </div>
                 <div class="project-card group cursor-pointer reveal reveal-delay-2">
-                    <div
-                        class="relative overflow-hidden rounded-2xl border border-gray-800 bg-gray-900 shadow-xl shadow-purple-500/5">
-                        <div
-                            class="overlay absolute inset-0 bg-purple-600/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 z-10 backdrop-blur-sm">
+                    <div class="relative overflow-hidden rounded-2xl border border-gray-800 bg-gray-900 shadow-xl shadow-purple-500/5">
+                        <div class="overlay absolute inset-0 bg-purple-600/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 z-10 backdrop-blur-sm">
                             <div class="text-center translate-y-4 group-hover:translate-y-0 transition duration-500">
                                 <p class="font-black text-xl mb-3">PREVIEW</p>
                                 <i class="fas fa-external-link-alt text-2xl bounce"></i>
                             </div>
                         </div>
-                        <img src="asset/SIA.png" alt="Project 2"
-                            class="w-full aspect-video object-cover group-hover:scale-110 transition duration-700">
+                        <img src="asset/SIA.png" alt="Project 2" class="w-full aspect-video object-cover group-hover:scale-110 transition duration-700">
                     </div>
-                    <h4
-                        class="mt-5 text-xl font-bold group-hover:text-purple-400 transition transform group-hover:translate-x-2">
-                        Sistem informasi akutansi</h4>
-                    <p class="text-gray-500 text-base mt-1">Sistem informasi untuk manajemen akuntansi</p>
+                    <h4 class="mt-5 text-xl font-bold group-hover:text-purple-400 transition transform group-hover:translate-x-2">Accounting Information System</h4>
+                    <p class="text-gray-500 text-base mt-1">Information system for accounting management</p>
                 </div>
                 <div class="project-card group cursor-pointer reveal reveal-delay-2">
-                    <div
-                        class="relative overflow-hidden rounded-2xl border border-gray-800 bg-gray-900 shadow-xl shadow-purple-500/5">
-                        <div
-                            class="overlay absolute inset-0 bg-purple-600/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 z-10 backdrop-blur-sm">
+                    <div class="relative overflow-hidden rounded-2xl border border-gray-800 bg-gray-900 shadow-xl shadow-purple-500/5">
+                        <div class="overlay absolute inset-0 bg-purple-600/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 z-10 backdrop-blur-sm">
                             <div class="text-center translate-y-4 group-hover:translate-y-0 transition duration-500">
                                 <p class="font-black text-xl mb-3">PREVIEW</p>
                                 <i class="fas fa-external-link-alt text-2xl bounce"></i>
                             </div>
                         </div>
-                        <img src="asset/resensi.png" alt="Project 2"
-                            class="w-full aspect-video object-cover group-hover:scale-110 transition duration-700">
+                        <img src="asset/resensi.png" alt="Project 3" class="w-full aspect-video object-cover group-hover:scale-110 transition duration-700">
                     </div>
-                    <h4
-                        class="mt-5 text-xl font-bold group-hover:text-purple-400 transition transform group-hover:translate-x-2">
-                        absensi</h4>
-                    <p class="text-gray-500 text-base mt-1">Sistem informasi untuk manajemen absensi</p>
+                    <h4 class="mt-5 text-xl font-bold group-hover:text-purple-400 transition transform group-hover:translate-x-2">Attendance System</h4>
+                    <p class="text-gray-500 text-base mt-1">Information system for attendance management</p>
                 </div>
                 <div class="project-card group cursor-pointer reveal reveal-delay-2">
-                    <div
-                        class="relative overflow-hidden rounded-2xl border border-gray-800 bg-gray-900 shadow-xl shadow-purple-500/5">
-                        <div
-                            class="overlay absolute inset-0 bg-purple-600/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 z-10 backdrop-blur-sm">
+                    <div class="relative overflow-hidden rounded-2xl border border-gray-800 bg-gray-900 shadow-xl shadow-purple-500/5">
+                        <div class="overlay absolute inset-0 bg-purple-600/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 z-10 backdrop-blur-sm">
                             <div class="text-center translate-y-4 group-hover:translate-y-0 transition duration-500">
                                 <p class="font-black text-xl mb-3">PREVIEW</p>
                                 <i class="fas fa-external-link-alt text-2xl bounce"></i>
                             </div>
                         </div>
-                        <img src="asset/kopi.png" alt="Project 4"
-                            class="w-full aspect-video object-cover group-hover:scale-110 transition duration-700">
+                        <img src="" alt="Project 4" class="w-full aspect-video object-cover group-hover:scale-110 transition duration-700">
                     </div>
-                    <h4
-                        class="mt-5 text-xl font-bold group-hover:text-purple-400 transition transform group-hover:translate-x-2">
-                        Aplikasi Kopi</h4>
-                    <p class="text-gray-500 text-base mt-1">Desain UI/UX Aplikasi Pemesanan Kopi</p>
+                    <h4 class="mt-5 text-xl font-bold group-hover:text-purple-400 transition transform group-hover:translate-x-2">Project 4</h4>
+                    <p class="text-gray-500 text-base mt-1">...</p>
                 </div>
             </div>
 
-            <!-- Desain Content -->
-<div id="content-desain" class="grid md:grid-cols-2 gap-8 hidden">
+            <div id="content-desain" class="grid md:grid-cols-2 gap-8 hidden">
                 <div class="project-card group cursor-pointer reveal reveal-delay-1">
-                    <div
-                        class="relative overflow-hidden rounded-2xl border border-gray-800 bg-gray-900 shadow-xl shadow-purple-500/5">
-                        <div
-                            class="overlay absolute inset-0 bg-pink-600/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 z-10 backdrop-blur-sm">
+                    <div class="relative overflow-hidden rounded-2xl border border-gray-800 bg-gray-900 shadow-xl shadow-purple-500/5">
+                        <div class="overlay absolute inset-0 bg-pink-600/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 z-10 backdrop-blur-sm">
                             <div class="text-center translate-y-4 group-hover:translate-y-0 transition duration-500">
                                 <p class="font-black text-xl mb-3">PREVIEW</p>
                                 <i class="fas fa-external-link-alt text-2xl bounce"></i>
                             </div>
                         </div>
-                        <img src="asset/kopi.png"
-                            class="w-full aspect-video object-cover group-hover:scale-110 transition duration-700">
+                        <img src="asset/kopi.png" alt="Design 1" class="w-full aspect-video object-cover group-hover:scale-110 transition duration-700">
                     </div>
-                    <h4
-                        class="mt-5 text-xl font-bold group-hover:text-pink-400 transition transform group-hover:translate-x-2">
-                        UI Design App</h4>
+                    <h4 class="mt-5 text-xl font-bold group-hover:text-pink-400 transition transform group-hover:translate-x-2">UI Design App</h4>
                     <p class="text-gray-500 text-base mt-1">Mobile App Design & Prototyping</p>
                 </div>
                 <div class="project-card group cursor-pointer reveal reveal-delay-2">
-                    <div
-                        class="relative overflow-hidden rounded-2xl border border-gray-800 bg-gray-900 shadow-xl shadow-purple-500/5">
-                        <div
-                            class="overlay absolute inset-0 bg-pink-600/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 z-10 backdrop-blur-sm">
+                    <div class="relative overflow-hidden rounded-2xl border border-gray-800 bg-gray-900 shadow-xl shadow-purple-500/5">
+                        <div class="overlay absolute inset-0 bg-pink-600/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 z-10 backdrop-blur-sm">
                             <div class="text-center translate-y-4 group-hover:translate-y-0 transition duration-500">
                                 <p class="font-black text-xl mb-3">PREVIEW</p>
                                 <i class="fas fa-external-link-alt text-2xl bounce"></i>
                             </div>
                         </div>
-                        <img src="asset/e-Commerce.png"
-                            class="w-full aspect-video object-cover group-hover:scale-110 transition duration-700">
+                        <img src="asset/e-Commerce.png" alt="Design 2" class="w-full aspect-video object-cover group-hover:scale-110 transition duration-700">
                     </div>
-                    <h4
-                        class="mt-5 text-xl font-bold group-hover:text-pink-400 transition transform group-hover:translate-x-2">
-                        e-Commerce Home Page</h4>
+                    <h4 class="mt-5 text-xl font-bold group-hover:text-pink-400 transition transform group-hover:translate-x-2">e-Commerce Home Page</h4>
                     <p class="text-gray-500 text-base mt-1">UI Design</p>
                 </div>
                 <div class="project-card group cursor-pointer reveal reveal-delay-2">
-                    <div
-                        class="relative overflow-hidden rounded-2xl border border-gray-800 bg-gray-900 shadow-xl shadow-purple-500/5">
-                        <div
-                            class="overlay absolute inset-0 bg-pink-600/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 z-10 backdrop-blur-sm">
+                    <div class="relative overflow-hidden rounded-2xl border border-gray-800 bg-gray-900 shadow-xl shadow-purple-500/5">
+                        <div class="overlay absolute inset-0 bg-pink-600/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 z-10 backdrop-blur-sm">
                             <div class="text-center translate-y-4 group-hover:translate-y-0 transition duration-500">
                                 <p class="font-black text-xl mb-3">PREVIEW</p>
                                 <i class="fas fa-external-link-alt text-2xl bounce"></i>
                             </div>
                         </div>
-                        <img src="asset/portfolio.png"
-                            class="w-full aspect-video object-cover group-hover:scale-110 transition duration-700">
+                        <img src="asset/portfolio.png" alt="Design 3" class="w-full aspect-video object-cover group-hover:scale-110 transition duration-700">
                     </div>
-                    <h4
-                        class="mt-5 text-xl font-bold group-hover:text-pink-400 transition transform group-hover:translate-x-2">
-                        Portfolio Website</h4>
+                    <h4 class="mt-5 text-xl font-bold group-hover:text-pink-400 transition transform group-hover:translate-x-2">Portfolio Website</h4>
                     <p class="text-gray-500 text-base mt-1">Personal Portfolio Website</p>
                 </div>
                 <div class="project-card group cursor-pointer reveal reveal-delay-2">
-                    <div
-                        class="relative overflow-hidden rounded-2xl border border-gray-800 bg-gray-900 shadow-xl shadow-purple-500/5">
-                        <div
-                            class="overlay absolute inset-0 bg-pink-600/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 z-10 backdrop-blur-sm">
+                    <div class="relative overflow-hidden rounded-2xl border border-gray-800 bg-gray-900 shadow-xl shadow-purple-500/5">
+                        <div class="overlay absolute inset-0 bg-pink-600/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 z-10 backdrop-blur-sm">
                             <div class="text-center translate-y-4 group-hover:translate-y-0 transition duration-500">
                                 <p class="font-black text-xl mb-3">PREVIEW</p>
                                 <i class="fas fa-external-link-alt text-2xl bounce"></i>
                             </div>
                         </div>
-                        <img src="asset/ui.jpg"
-                            class="w-full aspect-video object-cover group-hover:scale-110 transition duration-700">
+                        <img src="asset/ui.jpg" alt="Design 4" class="w-full aspect-video object-cover group-hover:scale-110 transition duration-700">
                     </div>
-                    <h4
-                        class="mt-5 text-xl font-bold group-hover:text-pink-400 transition transform group-hover:translate-x-2">
-                        Landing Page</h4>
+                    <h4 class="mt-5 text-xl font-bold group-hover:text-pink-400 transition transform group-hover:translate-x-2">Landing Page</h4>
                     <p class="text-gray-500 text-base mt-1">UI Design & Prototyping</p>
                 </div>
             </div>
@@ -454,17 +413,13 @@
     <section id="kontak" class="py-16 bg-gray-900/20 relative z-10 min-h-screen flex items-center">
         <div class="max-w-6xl mx-auto px-6 w-full">
             <div class="text-center mb-12 reveal">
-                <h3 class="section-title text-3xl md:text-4xl font-bold uppercase tracking-widest">Hubungi <span
-                        class="text-purple-500">Saya</span></h3>
-                <p class="text-gray-500 mt-2 italic text-base">Punya pertanyaan atau ingin bekerja sama? Kirim pesan!
-                </p>
+                <h3 class="section-title text-3xl md:text-4xl font-bold uppercase tracking-widest">Contact <span class="text-purple-500">Me</span></h3>
+                <p class="text-gray-500 mt-2 italic text-base">Have questions or want to work together? Send a message!</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- Contact Info -->
                 <div class="space-y-4 reveal reveal-delay-1">
-                    <div
-                        class="contact-card p-5 bg-gray-900/50 border border-gray-800 rounded-xl flex items-center gap-4 hover:border-purple-500 transition cursor-pointer">
+                    <div class="contact-card p-5 bg-gray-900/50 border border-gray-800 rounded-xl flex items-center gap-4 hover:border-purple-500 transition cursor-pointer">
                         <div class="w-12 h-12 bg-purple-600/20 rounded-xl flex items-center justify-center">
                             <i class="fas fa-envelope text-purple-500 text-xl"></i>
                         </div>
@@ -474,77 +429,64 @@
                         </div>
                     </div>
 
-                    <div
-                        class="contact-card p-5 bg-gray-900/50 border border-gray-800 rounded-xl flex items-center gap-4 hover:border-purple-500 transition cursor-pointer">
+                    <div class="contact-card p-5 bg-gray-900/50 border border-gray-800 rounded-xl flex items-center gap-4 hover:border-purple-500 transition cursor-pointer">
                         <div class="w-12 h-12 bg-purple-600/20 rounded-xl flex items-center justify-center">
                             <i class="fas fa-map-marker-alt text-purple-500 text-xl"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-white">Lokasi</h4>
+                            <h4 class="font-bold text-white">Location</h4>
                             <p class="text-gray-400 text-sm">Indonesia</p>
                         </div>
                     </div>
 
-                    <div
-                        class="contact-card p-5 bg-gray-900/50 border border-gray-800 rounded-xl flex items-center gap-4 hover:border-purple-500 transition cursor-pointer">
+                    <div class="contact-card p-5 bg-gray-900/50 border border-gray-800 rounded-xl flex items-center gap-4 hover:border-purple-500 transition cursor-pointer">
                         <div class="w-12 h-12 bg-purple-600/20 rounded-xl flex items-center justify-center">
                             <i class="fas fa-clock text-purple-500 text-xl"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-white">Respons</h4>
-                            <p class="text-gray-400 text-sm">24 Jam</p>
+                            <h4 class="font-bold text-white">Response</h4>
+                            <p class="text-gray-400 text-sm">24 Hours</p>
                         </div>
                     </div>
 
-                    <!-- Social Links -->
                     <div class="pt-4">
-                        <p class="text-gray-500 text-sm mb-3">atau hubungi via sosial media:</p>
+                        <p class="text-gray-500 text-sm mb-3">or connect via social media:</p>
                         <div class="flex gap-3">
-                            <a href="https://github.com/rifqi1429"
-                                class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600 transition hover:scale-110">
+                            <a href="https://github.com/rifqi1429" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600 transition hover:scale-110">
                                 <i class="fab fa-github text-lg"></i>
                             </a>
-                            <a href="https://www.instagram.com/knyz.24/"
-                                class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600 transition hover:scale-110">
+                            <a href="https://www.instagram.com/knyz.24/" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600 transition hover:scale-110">
                                 <i class="fab fa-instagram text-lg"></i>
                             </a>
-                            <a href="https://x.com/Xazee_14"
-                                class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600 transition hover:scale-110">
+                            <a href="https://x.com/Xazee_14" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600 transition hover:scale-110">
                                 <i class="fab fa-twitter text-lg"></i>
                             </a>
-                            <a href="https://wa.me/6283113355259"
-                                class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600 transition hover:scale-110">
+                            <a href="https://wa.me/6283113355259" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600 transition hover:scale-110">
                                 <i class="fab fa-whatsapp text-lg"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Contact Form -->
-                <form class="bg-gray-900/50 border border-gray-800 rounded-2xl p-6 md:p-8 reveal reveal-delay-2"
-                    action="mailto:emailmu@gmail.com" method="post" enctype="text/plain">
+                <form class="bg-gray-900/50 border border-gray-800 rounded-2xl p-6 md:p-8 reveal reveal-delay-2" action="mailto:emailmu@gmail.com" method="post" enctype="text/plain">
                     <div class="space-y-4">
                         <div>
-                            <label class="block text-sm font-medium text-gray-400 mb-2">Nama</label>
-                            <input type="text" name="name" placeholder="Nama kamu..." required
-                                class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition">
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Name</label>
+                            <input type="text" name="name" placeholder="Your name..." required class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition">
                         </div>
 
                         <div>
                             <label class="block text-sm font-medium text-gray-400 mb-2">Email</label>
-                            <input type="email" name="email" placeholder="emailkamu@email.com" required
-                                class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition">
+                            <input type="email" name="email" placeholder="your@email.com" required class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition">
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-400 mb-2">Pesan</label>
-                            <textarea name="message" rows="4" placeholder="Halo, saya ingin..." required
-                                class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition resize-none"></textarea>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Message</label>
+                            <textarea name="message" rows="4" placeholder="Hello, I would like to..." required class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition resize-none"></textarea>
                         </div>
 
-                        <button type="submit"
-                            class="w-full btn-primary bg-purple-600 px-6 py-4 rounded-xl font-bold hover:bg-purple-700 transition shadow-lg shadow-purple-600/20 glow">
-                            Kirim Pesan <i class="fas fa-paper-plane ml-2"></i>
+                        <button type="submit" class="w-full btn-primary bg-purple-600 px-6 py-4 rounded-xl font-bold hover:bg-purple-700 transition shadow-lg shadow-purple-600/20 glow">
+                            Send Message <i class="fas fa-paper-plane ml-2"></i>
                         </button>
                     </div>
                 </form>
@@ -556,15 +498,9 @@
     <footer class="py-10 border-t border-gray-900 text-center relative z-10 reveal">
         <p class="text-gray-500 text-xs uppercase tracking-[0.2em] mb-4">Let's build something amazing</p>
         <div class="flex justify-center gap-6 mb-6">
-            <a href="https://github.com/rifqi1429"
-                class="social-icon text-xl hover:text-purple-500 transition text-purple-400/70"><i
-                    class="fab fa-github"></i></a>
-            <a href="https://www.instagram.com/knyz.24/"
-                class="social-icon text-xl hover:text-purple-500 transition text-purple-400/70"><i
-                    class="fab fa-instagram"></i></a>
-            <a href="https://x.com/Xazee_14"
-                class="social-icon text-xl hover:text-purple-500 transition text-purple-400/70"><i
-                    class="fab fa-twitter"></i></a>
+            <a href="https://github.com/rifqi1429" class="social-icon text-xl hover:text-purple-500 transition text-purple-400/70"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/knyz.24/" class="social-icon text-xl hover:text-purple-500 transition text-purple-400/70"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/Xazee_14" class="social-icon text-xl hover:text-purple-500 transition text-purple-400/70"><i class="fab fa-twitter"></i></a>
         </div>
         <p class="text-gray-600 text-[10px]">
             <span class="inline-block heartbeat mr-1"></span>
@@ -573,8 +509,8 @@
         </p>
     </footer>
 
-    <!-- External JavaScript -->
     <script src="script.js"></script>
 </body>
 
 </html>
+
