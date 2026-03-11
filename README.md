@@ -164,10 +164,7 @@ Project ini menggunakan lisensi MIT.
 ## 👤 Author
 
 **Muhamad rifqi s**
-- Email: emailmu@gmail.com
+- Email: muhamadrifqis234@gmail.com
 - Lokasi: Indonesia
-
----
-
-Dibuat dengan ❤️ menggunakan Tailwind CSS
+...
 
